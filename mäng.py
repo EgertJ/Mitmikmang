@@ -35,7 +35,11 @@ red_sound = pygame.mixer.Sound("redlight.mp3")
 
 ## player sprite
 playerIcon = pygame.image.load('otse0.png')
-
+forward = [pygame.image.load("otse0.png"), pygame.image.load("otse1.png"), pygame.image.load("otse2.png")]
+right= [pygame.image.load("parem0.png"), pygame.image.load("parem1.png"), pygame.image.load("parem2.png")]
+left = [pygame.image.load("vasak0.png"), pygame.image.load("vasak1.png"), pygame.image.load("vasak2.png")]
+backwards = [pygame.image.load("tagasi0.png"), pygame.image.load("tagasi1.png"), pygame.image.load("tagasi2.png")]
+i = 0
 ## player coordinates
 playerX = randint(0, 945)
 playerY = 700
@@ -112,13 +116,29 @@ while running:
 
         if key[pygame.K_LEFT]:
             playerX -= change
+            i += 0.01
+            if i >= len(left):
+                i = 0
+            playerIcon= left[int(i)]
         elif key[pygame.K_RIGHT]:
             playerX += change
+            i += 0.01
+            if i >= len(right):
+                i = 0
+            playerIcon= right[int(i)]
         elif key[pygame.K_UP]:
             playerY -= change
+            i += 0.01
+            if i >= len(forward):
+                i = 0
+            playerIcon= forward[int(i)]
         elif key[pygame.K_DOWN]:
             playerY += change
-
+            fw = False
+            i += 0.01
+            if i >= len(backwards):
+                i = 0
+            playerIcon= backwards[int(i)]
         if playerX <= 0:
             playerX = 0
         elif playerX >= 975:
