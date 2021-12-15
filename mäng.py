@@ -40,6 +40,7 @@ right= [pygame.image.load("parem0.png"), pygame.image.load("parem1.png"), pygame
 left = [pygame.image.load("vasak0.png"), pygame.image.load("vasak1.png"), pygame.image.load("vasak2.png")]
 backwards = [pygame.image.load("tagasi0.png"), pygame.image.load("tagasi1.png"), pygame.image.load("tagasi2.png")]
 i = 0
+
 ## player coordinates
 playerX = randint(0, 945)
 playerY = 700
